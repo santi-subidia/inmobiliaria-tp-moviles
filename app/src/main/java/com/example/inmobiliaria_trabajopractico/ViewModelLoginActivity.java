@@ -38,7 +38,7 @@ public class ViewModelLoginActivity extends AndroidViewModel {
         }else{         //implementar la interface
         ApiClient.MiServicioInmobiliaria servicio = ApiClient.getServicio();
         Call<String> call = servicio.login(email, password);
-        call.enqueue(new Callback<String>() {
+        call.enqueue(new Callback<String>() {  //objeto que espera en segundo plano la respuesta...
             @Override
             public void onResponse(Call<String> call, retrofit2.Response<String> response) {
                 if (response.isSuccessful()) {

@@ -3,7 +3,7 @@ package com.example.inmobiliaria_trabajopractico.request;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.inmobiliaria_trabajopractico.modelo.Inmuble;
+import com.example.inmobiliaria_trabajopractico.modelo.Inmueble;
 import com.example.inmobiliaria_trabajopractico.modelo.Propietario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,6 +25,7 @@ public class ApiClient {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
+
         return retrofit.create(MiServicioInmobiliaria.class);
     }
     public interface MiServicioInmobiliaria{
@@ -37,7 +38,7 @@ public class ApiClient {
         Call<Propietario> getPropietario(@Header("Authorization") String token);
 
         @GET("api/Inmubles")
-        Call<Inmuble> getInmuble(@Header("Authorization") String token);
+        Call<Inmueble> getInmuble(@Header("Authorization") String token);
 
 
 
