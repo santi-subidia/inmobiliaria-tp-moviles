@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = binding.navView;
         if (navigationView != null) {
+            navigationView.inflateMenu(R.menu.navigation_drawer);
             mAppBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.nav_transform, R.id.nav_reflow, R.id.nav_slideshow, R.id.nav_settings)
                     .setOpenableLayout(binding.drawerLayout)
