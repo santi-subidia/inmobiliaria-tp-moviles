@@ -4,21 +4,38 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_transform"
+            android:id="@+id/nav_inicio"
             android:icon="@drawable/ic_camera_black_24dp"
-            android:title="@string/menu_transform" />
+            android:title="Inicio" />
+
         <item
-            android:id="@+id/nav_reflow"
+            android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_gallery_black_24dp"
-            android:title="@string/menu_reflow" />
+            android:title="Perfil" />
+
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_inmuebles"
             android:icon="@drawable/ic_slideshow_black_24dp"
-            android:title="@string/menu_slideshow" />
+            android:title="Inmuebles" />
+
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_inquilinos"
+            android:icon="@drawable/ic_gallery_black_24dp"
+            android:title="Inquilinos" />
+
+        <item
+            android:id="@+id/nav_contratos"
+            android:icon="@drawable/ic_slideshow_black_24dp"
+            android:title="Contratos" />
+
+        <item
+            android:id="@+id/nav_logout"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="@string/menu_settings" />
+            android:title="Logout" />
+
     </group>
+
+
 </menu>
