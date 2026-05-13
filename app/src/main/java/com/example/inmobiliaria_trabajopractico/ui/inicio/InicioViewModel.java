@@ -44,7 +44,7 @@ public class InicioViewModel extends AndroidViewModel {
 
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(SanLuis)
-                    .zoom(16)
+                    .zoom(18)
                     .bearing(0)
                     .tilt(30)
                     .build();
