@@ -42,8 +42,15 @@ public class ApiClient {
         @PUT("api/Propietarios/actualizar")
         Call<Propietario> actualizarPropietario(@Header("Authorization") String token, @Body Propietario propietario);
 
+        @FormUrlEncoded
+        @PUT("api/Propietarios/changePassword")
+        Call<Void> cambiarContrasenia(@Header("Authorization") String token,
+                                      @Field("currentPassword") String actual,
+                                      @Field("newPassword")  String nueva);
+
         @GET("api/Inmubles")
         Call<Inmueble> getInmuble(@Header("Authorization") String token);
+
 
 
 
