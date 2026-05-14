@@ -144,7 +144,6 @@
                 android:text="Cambiar Contraseña"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_of="@+id/btnModificarPerfil"
                 app:layout_constraintStart_toEndOf="@+id/btnModificarPerfil"
                 app:layout_constraintTop_toBottomOf="@id/etEmailPerfil" />
 
