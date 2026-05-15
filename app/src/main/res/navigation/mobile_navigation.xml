@@ -24,4 +24,10 @@
         android:label="Inmuebles"
         tools:layout="@layout/fragment_inmueble" />
 
+    <fragment
+        android:id="@+id/nav_cambiar_contrasenia"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.perfil.CambiarContraseniaFragment"
+        android:label="Cambiar Contraseña"
+        tools:layout="@layout/fragment_cambiar_contrasenia" />
+
 </navigation>
