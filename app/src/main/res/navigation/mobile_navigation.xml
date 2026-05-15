@@ -18,4 +18,10 @@
         android:label="Perfil"
         tools:layout="@layout/fragment_perfil" />
 
+    <fragment
+        android:id="@+id/nav_inmuebles"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.inmuble.InmuebleFragment"
+        android:label="Inmuebles"
+        tools:layout="@layout/fragment_inmueble" />
+
 </navigation>

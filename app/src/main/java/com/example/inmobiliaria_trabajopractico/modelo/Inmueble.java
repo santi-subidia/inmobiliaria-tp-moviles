@@ -12,8 +12,6 @@ public class Inmueble implements Serializable {
     private String tipo;
     private int ambientes;
     private int superficie;
-    private double latitud;
-    private double longitud;
     @SerializedName("valor")
     private double precio;
     private String imagen;
@@ -23,7 +21,20 @@ public class Inmueble implements Serializable {
     private int propietarioId;
     @SerializedName("duenio")
     private Propietario propietario;
-    private boolean tieneContratoVigente;
+
+    public Inmueble(int id, String direccion, String uso, String tipo, int ambientes, int superficie, double precio, String imagen, boolean estado, int propietarioId, Propietario propietario) {
+        this.id = id;
+        this.direccion = direccion;
+        this.uso = uso;
+        this.tipo = tipo;
+        this.ambientes = ambientes;
+        this.superficie = superficie;
+        this.precio = precio;
+        this.imagen = imagen;
+        this.estado = estado;
+        this.propietarioId = propietarioId;
+        this.propietario = propietario;
+    }
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -37,10 +48,6 @@ public class Inmueble implements Serializable {
     public void setAmbientes(int ambientes) { this.ambientes = ambientes; }
     public int getSuperficie() { return superficie; }
     public void setSuperficie(int superficie) { this.superficie = superficie; }
-    public double getLatitud() { return latitud; }
-    public void setLatitud(double latitud) { this.latitud = latitud; }
-    public double getLongitud() { return longitud; }
-    public void setLongitud(double longitud) { this.longitud = longitud; }
     public double getPrecio() { return precio; }
     public void setPrecio(double precio) { this.precio = precio; }
     public String getImagen() { return imagen; }
@@ -51,8 +58,6 @@ public class Inmueble implements Serializable {
     public void setPropietarioId(int propietarioId) { this.propietarioId = propietarioId; }
     public Propietario getPropietario() { return propietario; }
     public void setPropietario(Propietario propietario) { this.propietario = propietario; }
-    public boolean isTieneContratoVigente() { return tieneContratoVigente; }
-    public void setTieneContratoVigente(boolean tieneContratoVigente) { this.tieneContratoVigente = tieneContratoVigente; }
 
     public String getImagenFullUrl() {
         if (imagen != null && !imagen.isEmpty()) {
