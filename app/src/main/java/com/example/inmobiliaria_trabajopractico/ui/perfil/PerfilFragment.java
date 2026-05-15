@@ -10,7 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
+import com.example.inmobiliaria_trabajopractico.R;
 import com.example.inmobiliaria_trabajopractico.databinding.FragmentPerfilBinding;
 import com.example.inmobiliaria_trabajopractico.modelo.Propietario;
 
@@ -30,7 +32,7 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(PerfilViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity()).get(PerfilViewModel.class);
 
         mViewModel.getmPropietario().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
@@ -62,6 +64,76 @@ public class PerfilFragment extends Fragment {
             }
         });
 
+        mViewModel.getmNombreError().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String error) {
+                binding.etNombrePerfil.setError(error);
+            }
+        });
+
+        mViewModel.getmApellidoError().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String error) {
+                binding.etApellidoPerfil.setError(error);
+            }
+        });
+
+        mViewModel.getmDniError().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String error) {
+                binding.etDniPerfil.setError(error);
+            }
+        });
+
+        mViewModel.getmTelefonoError().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String error) {
+                binding.etTelefonoPerfil.setError(error);
+            }
+        });
+
+        mViewModel.getmEmailError().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String error) {
+                binding.etEmailPerfil.setError(error);
+            }
+        });
+
+        binding.etNombrePerfil.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) mViewModel.limpiarErrorNombre();
+            }
+        });
+
+        binding.etApellidoPerfil.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) mViewModel.limpiarErrorApellido();
+            }
+        });
+
+        binding.etDniPerfil.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) mViewModel.limpiarErrorDni();
+            }
+        });
+
+        binding.etTelefonoPerfil.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) mViewModel.limpiarErrorTelefono();
+            }
+        });
+
+        binding.etEmailPerfil.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) mViewModel.limpiarErrorEmail();
+            }
+        });
+
         binding.btnModificarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +143,7 @@ public class PerfilFragment extends Fragment {
                     propietarioActual.setDni(binding.etDniPerfil.getText().toString());
                     propietarioActual.setTelefono(binding.etTelefonoPerfil.getText().toString());
                     propietarioActual.setEmail(binding.etEmailPerfil.getText().toString());
-                    
+
                     mViewModel.accionBotonModificar(propietarioActual);
                 }
             }
@@ -80,6 +152,7 @@ public class PerfilFragment extends Fragment {
         binding.btnCambiarContrasenia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_cambiar_contrasenia);
             }
         });
 
