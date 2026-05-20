@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.example.inmobiliaria_trabajopractico.R;
@@ -29,7 +30,6 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
         this.inflater = inflater;
     }
 
-    //metodo que infla el card
     @NonNull
     @Override
     public ViewHolderInmueble onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,7 +37,6 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
         return new ViewHolderInmueble(itemView);
     }
 
-    //metodo que recorre la lista
     @Override
     public void onBindViewHolder(@NonNull ViewHolderInmueble holder, int position) {
         Inmueble inmuebleActual = listaInmuebles.get(position);
@@ -53,6 +52,16 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
                 .error(R.drawable.house)
                 .into(holder.foto);
 
+        //metodo para navegar a fragment detalle
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("inmueble", inmuebleActual);
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_nav_inmuebles_to_detalleInmuebleFragment, bundle);
+            }
+        });
     }
 
     @Override

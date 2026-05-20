@@ -22,12 +22,28 @@
         android:id="@+id/nav_inmuebles"
         android:name="com.example.inmobiliaria_trabajopractico.ui.inmuble.InmuebleFragment"
         android:label="Inmuebles"
-        tools:layout="@layout/fragment_inmueble" />
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_inmuebles_to_detalleInmuebleFragment"
+            app:destination="@id/detalleInmuebleFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_cambiar_contrasenia"
         android:name="com.example.inmobiliaria_trabajopractico.ui.perfil.CambiarContraseniaFragment"
         android:label="Cambiar Contraseña"
         tools:layout="@layout/fragment_cambiar_contrasenia" />
+    <fragment
+        android:id="@+id/detalleInmuebleFragment"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.inmuble.DetalleInmuebleFragment"
+        android:label="fragment_detalle_inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_nav_inmuebles"
+            app:destination="@id/nav_inmuebles" />
+        <argument
+            android:name="Inmuble"
+            app:argType="com.example.inmobiliaria_trabajopractico.modelo.Inmueble" />
+    </fragment>
 
 </navigation>
