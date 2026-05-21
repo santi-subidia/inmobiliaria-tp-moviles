@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_nav_inmuebles_to_detalleInmuebleFragment"
             app:destination="@id/detalleInmuebleFragment" />
+        <action
+            android:id="@+id/action_nav_inmuebles_to_crearInmuebleFragment"
+            app:destination="@id/crearInmuebleFragment" />
     </fragment>
 
     <fragment
@@ -45,5 +48,11 @@
             android:name="Inmuble"
             app:argType="com.example.inmobiliaria_trabajopractico.modelo.Inmueble" />
     </fragment>
+
+    <fragment
+        android:id="@+id/crearInmuebleFragment"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.inmuble.CrearInmuebleFragment"
+        android:label="Crear Inmueble"
+        tools:layout="@layout/fragment_crear_inmueble" />
 
 </navigation>

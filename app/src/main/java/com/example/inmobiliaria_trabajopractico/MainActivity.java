@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        binding.appBarMain.fab.setOnClickListener(view ->
-                android.widget.Toast.makeText(this, "Contacto Inmobiliaria", android.widget.Toast.LENGTH_SHORT).show());
-
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host_fragment_content_main);
 
