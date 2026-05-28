@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_detalleInmuebleFragment_to_nav_inmuebles"
             app:destination="@id/nav_inmuebles" />
+        <action
+            android:id="@+id/action_detalleInmuebleFragment_to_contratoFragment"
+            app:destination="@id/contratoFragment" />
         <argument
             android:name="Inmuble"
             app:argType="com.example.inmobiliaria_trabajopractico.modelo.Inmueble" />
@@ -54,5 +57,16 @@
         android:name="com.example.inmobiliaria_trabajopractico.ui.inmuble.CrearInmuebleFragment"
         android:label="Crear Inmueble"
         tools:layout="@layout/fragment_crear_inmueble" />
+
+    <fragment
+        android:id="@+id/contratoFragment"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.contrato.ContratoFragment"
+        android:label="Contrato"
+        tools:layout="@layout/fragment_contrato">
+        <argument
+            android:name="inmuebleId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 
 </navigation>

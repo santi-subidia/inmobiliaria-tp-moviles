@@ -3,6 +3,7 @@ package com.example.inmobiliaria_trabajopractico.request;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.inmobiliaria_trabajopractico.modelo.Contrato;
 import com.example.inmobiliaria_trabajopractico.modelo.Inmueble;
 import com.example.inmobiliaria_trabajopractico.modelo.Propietario;
 import com.google.gson.Gson;
@@ -26,6 +27,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public class ApiClient {
     public final static String BASE_URL ="https://capacitacion.alwaysdata.net/";
@@ -67,6 +69,8 @@ public class ApiClient {
                                      @Part MultipartBody.Part imagen,
                                      @Part("inmueble") RequestBody inmuebleJson);
 
+        @GET("api/contratos/inmueble/{id}")
+        Call<Contrato> getContratoPorInmueble(@Header("Authorization") String token, @Path("id") int inmuebleId);
 
     }
     public static void crearToken(Context context, String token) {

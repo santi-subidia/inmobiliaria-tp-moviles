@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.example.inmobiliaria_trabajopractico.R;
@@ -67,6 +68,16 @@ public class DetalleInmuebleFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mViewModel.cambiarDisponibilidad(binding.cbDetalleEstado.isChecked());
+            }
+        });
+
+        binding.btnVerContrato.setOnClickListener(v -> {
+            Inmueble inmueble = (Inmueble) getArguments().getSerializable("inmueble");
+            if (inmueble != null) {
+                Bundle args = new Bundle();
+                args.putInt("inmuebleId", inmueble.getId());
+                Navigation.findNavController(v)
+                        .navigate(R.id.action_detalleInmuebleFragment_to_contratoFragment, args);
             }
         });
 
