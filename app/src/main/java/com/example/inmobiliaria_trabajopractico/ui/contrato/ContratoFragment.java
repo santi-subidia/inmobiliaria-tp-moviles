@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import com.example.inmobiliaria_trabajopractico.R;
 import com.example.inmobiliaria_trabajopractico.databinding.FragmentContratoBinding;
 import com.example.inmobiliaria_trabajopractico.modelo.Contrato;
 import java.text.NumberFormat;
@@ -43,7 +44,9 @@ public class ContratoFragment extends Fragment {
             if (contrato != null) {
                 binding.llContratoContent.setVisibility(View.VISIBLE);
                 binding.llErrorContent.setVisibility(View.GONE);
+                binding.btnVerPagos.setVisibility(View.VISIBLE);
                 populateContrato(contrato);
+                setupPagosButton(contrato);
             }
         });
 
@@ -75,6 +78,15 @@ public class ContratoFragment extends Fragment {
         binding.tvContratoMonto.setText("$ " + nf.format(contrato.getMontoAlquiler()));
 
         binding.tvContratoEstado.setText(contrato.isEstado() ? "Vigente" : "Finalizado");
+    }
+
+    private void setupPagosButton(Contrato contrato) {
+        binding.btnVerPagos.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("contratoId", contrato.getId());
+            Navigation.findNavController(v)
+                    .navigate(R.id.action_contratoFragment_to_pagosFragment, bundle);
+        });
     }
 
     @Override

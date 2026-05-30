@@ -67,6 +67,20 @@
             android:name="inmuebleId"
             app:argType="integer"
             android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_contratoFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.pago.PagoFragment"
+        android:label="Pagos"
+        tools:layout="@layout/fragment_pago">
+        <argument
+            android:name="contratoId"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
 
 </navigation>
