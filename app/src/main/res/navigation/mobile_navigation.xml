@@ -39,7 +39,7 @@
     <fragment
         android:id="@+id/detalleInmuebleFragment"
         android:name="com.example.inmobiliaria_trabajopractico.ui.inmuble.DetalleInmuebleFragment"
-        android:label="fragment_detalle_inmueble"
+        android:label="Detalle Inmueble"
         tools:layout="@layout/fragment_detalle_inmueble" >
         <action
             android:id="@+id/action_detalleInmuebleFragment_to_nav_inmuebles"
