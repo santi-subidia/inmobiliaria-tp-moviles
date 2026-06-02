@@ -151,12 +151,12 @@ public class CrearInmuebleFragment extends Fragment {
     private void crearInmueble() {
         Toast.makeText(getContext(), "Cargando...", Toast.LENGTH_SHORT).show();
 
-        String direccion = binding.etDireccion.getText() != null ? binding.etDireccion.getText().toString() : "";
-        String uso = binding.spUso.getSelectedItem() != null ? binding.spUso.getSelectedItem().toString() : "";
-        String tipo = binding.spTipo.getSelectedItem() != null ? binding.spTipo.getSelectedItem().toString() : "";
-        String ambientesStr = binding.etAmbientes.getText() != null ? binding.etAmbientes.getText().toString() : "";
-        String superficieStr = binding.etSuperficie.getText() != null ? binding.etSuperficie.getText().toString() : "";
-        String precioStr = binding.etPrecio.getText() != null ? binding.etPrecio.getText().toString() : "";
+        String direccion = binding.etDireccion.getText().toString();
+        String uso = binding.spUso.getSelectedItem().toString();
+        String tipo = binding.spTipo.getSelectedItem().toString();
+        String ambientesStr = binding.etAmbientes.getText().toString();
+        String superficieStr = binding.etSuperficie.getText().toString();
+        String precioStr = binding.etPrecio.getText().toString();
         boolean estado = binding.cbEstado.isChecked();
 
         mViewModel.crearInmueble(direccion, uso, tipo, ambientesStr, superficieStr, precioStr, estado);
