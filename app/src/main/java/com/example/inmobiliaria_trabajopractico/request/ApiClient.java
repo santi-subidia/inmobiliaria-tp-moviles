@@ -76,6 +76,8 @@ public class ApiClient {
         @GET("api/pagos/contrato/{id}")
         Call<List<Pago>> getPagosPorContrato(@Header("Authorization") String token, @Path("id") int contratoId);
 
+        @GET("api/Inmuebles/GetContratoVigente")
+        Call<List<Inmueble>> getInmueblesAlquilados(@Header("Authorization") String token);
     }
     public static void crearToken(Context context, String token) {
         SharedPreferences sp = context.getSharedPreferences("token.xml", Context.MODE_PRIVATE);

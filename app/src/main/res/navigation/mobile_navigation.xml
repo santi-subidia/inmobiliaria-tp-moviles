@@ -82,5 +82,23 @@
             app:argType="integer"
             android:defaultValue="-1" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_inquilinos"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.inquilinos.InquilinosFragment"
+        android:label="Inquilinos"
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_inquilinos_to_detalleInquilinoFragment"
+            app:destination="@id/nav_detalle_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detalle_inquilino"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.inquilinos.DetalleInquilinoFragment"
+        android:label="Detalle Inquilino"
+        tools:layout="@layout/fragment_detalle_inquilino" >
+        <action
+            android:id="@+id/action_detalleInquilinoFragment_to_nav_inquilinos"
+            app:destination="@id/nav_inquilinos" />
+    </fragment>
 
 </navigation>
