@@ -143,6 +143,7 @@ public class PerfilFragment extends Fragment {
                     propietarioActual.setDni(binding.etDniPerfil.getText().toString());
                     propietarioActual.setTelefono(binding.etTelefonoPerfil.getText().toString());
                     propietarioActual.setEmail(binding.etEmailPerfil.getText().toString());
+                    propietarioActual.setClave(null);
 
                     mViewModel.accionBotonModificar(propietarioActual);
                 }
