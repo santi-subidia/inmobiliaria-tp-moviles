@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -16,6 +17,7 @@ import com.example.inmobiliaria_trabajopractico.request.ApiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class ViewModelLoginActivity extends AndroidViewModel {
     private MutableLiveData<String> mensaje;
@@ -80,6 +82,16 @@ public class ViewModelLoginActivity extends AndroidViewModel {
                 resultadoValidacion.setValue(ERROR_RED);
             }
         });
+    }
+
+    public void llamarInmobiliaria() {
+        String telefono = "2664553747";
+
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + telefono));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        context.startActivity(intent);
     }
 
     public void recuperarDatos(String email, String password) {
