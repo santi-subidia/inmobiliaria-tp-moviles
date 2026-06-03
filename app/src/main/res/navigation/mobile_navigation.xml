@@ -100,5 +100,10 @@
             android:id="@+id/action_detalleInquilinoFragment_to_nav_inquilinos"
             app:destination="@id/nav_inquilinos" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.inmobiliaria_trabajopractico.ui.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" />
 
 </navigation>
