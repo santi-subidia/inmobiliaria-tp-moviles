@@ -29,7 +29,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
         this.listaInmuebles = inmuebles;
         this.inflater = inflater;
     }
-
+//aca guardamos la lista con sus item dentro
     @NonNull
     @Override
     public ViewHolderInmueble onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

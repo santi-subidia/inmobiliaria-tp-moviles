@@ -41,7 +41,7 @@ public class ContratoFragment extends Fragment {
 
     private void setupObservers() {
         mViewModel.getContrato().observe(getViewLifecycleOwner(), contrato -> {
-            if (contrato != null) {
+            if (contrato != null) { //tener ojo esto no es necesario ya que lo estamos verificando en el viewmodel
                 binding.llContratoContent.setVisibility(View.VISIBLE);
                 binding.llErrorContent.setVisibility(View.GONE);
                 binding.btnVerPagos.setVisibility(View.VISIBLE);
