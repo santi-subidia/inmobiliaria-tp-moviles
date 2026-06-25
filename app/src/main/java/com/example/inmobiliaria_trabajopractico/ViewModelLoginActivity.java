@@ -115,7 +115,7 @@ public class ViewModelLoginActivity extends AndroidViewModel {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 } else {
-                    if (response.code() == 401) {
+                    if (response.code() == 400) {
                         mensaje.setValue("Usuario o contraseña incorrectos");
                     } else {
                         mensaje.setValue("Error del servidor. Intente más tarde");
